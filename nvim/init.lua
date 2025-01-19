@@ -20,6 +20,7 @@ opt.expandtab = true
 opt.scrolloff = 8
 opt.termguicolors = true
 opt.undofile = true
+opt.shada = ''
 opt.shadafile = 'NONE'
 
 -- indentation
