@@ -6,6 +6,10 @@
     flake-utils.url = "github:numtide/flake-utils";
     gen-luarc.url = "github:mrcjkb/nix-gen-luarc-json";
 
+    git-worktree-nvim = {
+      url = "github:polarmutex/git-worktree.nvim";
+      flake = false;
+    };
     # Add bleeding-edge plugins here.
     # They can be updated with `nix flake update` (make sure to commit the generated flake.lock)
     # wf-nvim = {

@@ -12,6 +12,7 @@ configs.setup {
   -- auto_install = false, -- Do not automatically install missing parsers when entering buffer
   highlight = {
     enable = true,
+    additional_vim_regex_highlighting = true,
     disable = function(_, buf)
       local max_filesize = 100 * 1024 -- 100 KiB
       local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
@@ -86,12 +87,4 @@ configs.setup {
   },
 }
 
-require('treesitter-context').setup {
-  max_lines = 3,
-}
-
 require('ts_context_commentstring').setup()
-
--- Tree-sitter based folding
--- vim.opt.foldmethod = 'expr'
-vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'

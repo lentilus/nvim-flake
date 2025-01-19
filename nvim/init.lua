@@ -30,7 +30,7 @@ vim.opt.shiftwidth = 4
 opt.path = vim.o.path .. '**'
 
 -- 80 line hint
-vim.opt.colorcolumn = '80'
+opt.colorcolumn = '80'
 
 -- diagnostic messages
 vim.diagnostic.config {
@@ -46,6 +46,10 @@ vim.diagnostic.config {
 }
 
 -- native plugins
-cmd.syntax('on')
+cmd.syntax('manual')
 cmd.filetype('plugin', 'indent', 'on')
-cmd.packadd('cfilter') -- Allows filtering the quickfix list with :cfdo
+-- cmd.packadd('cfilter') -- Allows filtering the quickfix list with :cfdo
+
+-- make sure color scheme is set before other plugins load
+require('gruvbox').setup { contrast = 'hard' }
+vim.cmd.colorscheme('gruvbox')
