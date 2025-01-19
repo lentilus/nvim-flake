@@ -20,11 +20,12 @@ opt.expandtab = true
 opt.scrolloff = 8
 opt.termguicolors = true
 opt.undofile = true
+opt.shadafile = 'NONE'
 
 -- indentation
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
 
 -- search down into subfolders
 opt.path = vim.o.path .. '**'
@@ -46,7 +47,7 @@ vim.diagnostic.config {
 }
 
 -- native plugins
-cmd.syntax('manual')
+cmd.syntax('on')
 cmd.filetype('plugin', 'indent', 'on')
 -- cmd.packadd('cfilter') -- Allows filtering the quickfix list with :cfdo
 
