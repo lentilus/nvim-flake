@@ -33,12 +33,13 @@ with final.pkgs.lib; let
 
     # completion
     luasnip
-    nvim-cmp
-    cmp_luasnip
-    cmp-nvim-lsp
-    cmp-buffer
-    cmp-path
-    cmp-cmdline
+    blink-cmp
+    # nvim-cmp
+    # cmp_luasnip
+    # cmp-nvim-lsp
+    # cmp-buffer
+    # cmp-path
+    # cmp-cmdline
 
     # git
     gitsigns-nvim
@@ -49,14 +50,15 @@ with final.pkgs.lib; let
     undotree 
     oil-nvim
     conform-nvim
+    vim-tmux-navigator
 
     # UI
-    lualine-nvim
+    mini-statusline
     gruvbox-nvim
 
     # libraries
     plenary-nvim
-    nvim-web-devicons
+    # nvim-web-devicons
     vim-startuptime
 
     # typst
@@ -70,6 +72,10 @@ with final.pkgs.lib; let
        ];
     })
 
+    # (pkgs.vimUtils.buildVimPlugin {
+    #    name = "care-cmp";
+    #    src = inputs.care-cmp; 
+    # })
   ];
 
   extraPackages = with pkgs; [

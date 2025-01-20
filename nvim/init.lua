@@ -20,8 +20,6 @@ opt.expandtab = true
 opt.scrolloff = 8
 opt.termguicolors = true
 opt.undofile = true
-opt.shada = ''
-opt.shadafile = 'NONE'
 
 -- indentation
 opt.tabstop = 4
@@ -33,6 +31,20 @@ opt.path = vim.o.path .. '**'
 
 -- 80 line hint
 opt.colorcolumn = '80'
+
+-- defer expensive code
+cmd.syntax('off')
+cmd.filetype('off')
+cmd.filetype('plugin', 'indent', 'off')
+
+vim.defer_fn(function()
+  cmd.syntax('on')
+  cmd.filetype('on')
+  cmd.filetype('plugin', 'indent', 'on')
+
+  -- native plugins
+  -- cmd.packadd('cfilter') -- Allows filtering the quickfix list with :cfdo
+end, 0)
 
 -- diagnostic messages
 vim.diagnostic.config {
@@ -46,11 +58,6 @@ vim.diagnostic.config {
     prefix = '',
   },
 }
-
--- native plugins
-cmd.syntax('on')
-cmd.filetype('plugin', 'indent', 'on')
--- cmd.packadd('cfilter') -- Allows filtering the quickfix list with :cfdo
 
 -- make sure color scheme is set before other plugins load
 require('gruvbox').setup { contrast = 'hard' }

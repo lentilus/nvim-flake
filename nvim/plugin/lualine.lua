@@ -3,13 +3,15 @@ if vim.g.did_load_lualine_plugin then
 end
 vim.g.did_load_lualine_plugin = true
 
-local opts = {
-  options = {
-    theme = 'gruvbox',
-    globalstatus = true,
-    component_separators = '|',
-    section_separators = '',
-  },
-}
+-- local opts = {
+--   options = {
+--     theme = 'gruvbox',
+--     globalstatus = true,
+--     component_separators = '|',
+--     section_separators = '',
+--   },
+-- }
+--
+-- require('lualine').setup(opts)
 
-require('lualine').setup(opts)
+require('mini.statusline').setup()

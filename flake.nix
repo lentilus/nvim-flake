@@ -10,6 +10,16 @@
       url = "github:polarmutex/git-worktree.nvim";
       flake = false;
     };
+
+    care-nvim = {
+      url = "github:max397574/care.nvim";
+    };
+
+    care-cmp = {
+      url = "github:max397574/care-cmp";
+      flake = false;
+    };
+
     # Add bleeding-edge plugins here.
     # They can be updated with `nix flake update` (make sure to commit the generated flake.lock)
     # wf-nvim = {
