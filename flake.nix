@@ -20,6 +20,11 @@
       flake = false;
     };
 
+    typstar = {
+      url = "github:arne314/typstar";
+      flake = false;
+    };
+
     # Add bleeding-edge plugins here.
     # They can be updated with `nix flake update` (make sure to commit the generated flake.lock)
     # wf-nvim = {

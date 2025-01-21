@@ -365,7 +365,8 @@
         "flake-utils": "flake-utils",
         "gen-luarc": "gen-luarc_2",
         "git-worktree-nvim": "git-worktree-nvim",
-        "nixpkgs": "nixpkgs_4"
+        "nixpkgs": "nixpkgs_4",
+        "typstar": "typstar"
       }
     },
     "systems": {
@@ -380,6 +381,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "typstar": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1736699679,
+        "narHash": "sha256-hHoKL7ywDmzCee+kOBWXXl/Vmd6/xQy2eC5LvcVyTeE=",
+        "owner": "arne314",
+        "repo": "typstar",
+        "rev": "bfc2fd103dc0f0f7a82e1fb5a57ec8d7b055bcbf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "arne314",
+        "repo": "typstar",
         "type": "github"
       }
     }

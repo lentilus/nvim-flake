@@ -61,7 +61,7 @@ with final.pkgs.lib; let
     # nvim-web-devicons
     vim-startuptime
 
-    # typst
+    typst-vim
 
     # bleeding-edge
     (pkgs.vimUtils.buildVimPlugin {
@@ -71,11 +71,15 @@ with final.pkgs.lib; let
           plenary-nvim 
        ];
     })
-
-    # (pkgs.vimUtils.buildVimPlugin {
-    #    name = "care-cmp";
-    #    src = inputs.care-cmp; 
-    # })
+    
+    (pkgs.vimUtils.buildVimPlugin {
+       name = "typstar";
+       src = inputs.typstar; 
+       buildInputs = [
+          luasnip 
+          nvim-treesitter-parsers.typst
+       ];
+    })
   ];
 
   extraPackages = with pkgs; [
