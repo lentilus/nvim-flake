@@ -7,8 +7,8 @@ local map = vim.keymap.set
 local cmd = vim.cmd
 
 -- quickfix
-map('n', '<M-j>', cmd.cnext)
-map('n', '<M-k>', cmd.cprevious)
+map('n', '<M-n>', cmd.cnext)
+map('n', '<M-p>', cmd.cprevious)
 
 -- tabs
 map('n', '<M-h>', cmd.tabnext)
