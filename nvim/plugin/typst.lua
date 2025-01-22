@@ -4,6 +4,7 @@ end
 vim.g.did_load_typst_plugin = true
 
 require('typstar').setup {}
+vim.g.typst_pdf_viewer = 'previewpdf --root .'
 
 -- set buffer local keymaps
 vim.api.nvim_create_autocmd('FileType', {
@@ -58,7 +59,7 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
       return
     end
 
-    vim.cmd.TypstWatch()
+    vim.cmd([[TypstWatch]])
     vim.b[bufnr].typstwatch = true
   end,
 })
