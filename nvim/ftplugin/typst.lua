@@ -5,7 +5,7 @@ if vim.fn.executable('tinymist') then
   local root_files = {
     '.git',
     '.zeta',
-    '*.typ',
+    -- '*.typ',
   }
 
   vim.lsp.start {
