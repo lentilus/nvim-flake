@@ -42,7 +42,7 @@ local function journal()
   vim.bo.filetype = 'typst'
 end
 
-vim.keymap.set('n', '<leader>jj', journal, { buffer = true })
+vim.keymap.set('n', '<leader>jj', journal)
 
 -- auto-preview
 vim.api.nvim_create_autocmd('BufWinEnter', {
