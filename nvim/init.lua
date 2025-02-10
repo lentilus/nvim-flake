@@ -32,20 +32,6 @@ opt.path = vim.o.path .. '**'
 -- 80 line hint
 opt.colorcolumn = '80'
 
--- defer expensive code
-cmd.syntax('off')
-cmd.filetype('off')
-cmd.filetype('plugin', 'indent', 'off')
-
-vim.defer_fn(function()
-  cmd.syntax('on')
-  cmd.filetype('on')
-  cmd.filetype('plugin', 'indent', 'on')
-
-  -- native plugins
-  -- cmd.packadd('cfilter') -- Allows filtering the quickfix list with :cfdo
-end, 0)
-
 -- diagnostic messages
 vim.diagnostic.config {
   update_in_insert = true,
@@ -61,4 +47,4 @@ vim.diagnostic.config {
 
 -- make sure color scheme is set before other plugins load
 require('gruvbox').setup { contrast = 'hard' }
-vim.cmd.colorscheme('gruvbox')
+cmd.colorscheme('gruvbox')
