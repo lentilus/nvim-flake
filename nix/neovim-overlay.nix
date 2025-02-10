@@ -34,12 +34,6 @@ with final.pkgs.lib; let
     # completion
     luasnip
     blink-cmp
-    # nvim-cmp
-    # cmp_luasnip
-    # cmp-nvim-lsp
-    # cmp-buffer
-    # cmp-path
-    # cmp-cmdline
 
     # git
     gitsigns-nvim
@@ -51,6 +45,7 @@ with final.pkgs.lib; let
     oil-nvim
     conform-nvim
     vim-tmux-navigator
+    direnv-vim
 
     # UI
     mini-statusline
@@ -58,7 +53,6 @@ with final.pkgs.lib; let
 
     # libraries
     plenary-nvim
-    # nvim-web-devicons
     vim-startuptime
 
     typst-vim
@@ -82,20 +76,10 @@ with final.pkgs.lib; let
     })
   ];
 
-  extraPackages = with pkgs; [
+  extraPackages = [
     # language servers, etc.
-    lua-language-server
-    tinymist
-    nil
-
-    # formatters
-    typstfmt
-    stylua
-    black
-    gofumpt
-    goimports-reviser
-    golines
-    texlivePackages.latexindent
+    # !! now configured per project with nix-direnv !!
+    pkgs.ripgrep # for telescope
   ];
 in {
   # This is the neovim derivation
