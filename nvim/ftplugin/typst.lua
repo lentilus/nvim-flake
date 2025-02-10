@@ -1,4 +1,4 @@
-if vim.g.did_load_typstar_plugin then
+if not vim.g.did_load_typstar_plugin then
   vim.g.typst_pdf_viewer = 'previewpdf --root .'
   vim.g.did_load_typstar_plugin = true
   require('typstar').setup {}
@@ -59,7 +59,7 @@ vim.keymap.set('n', '<leader>jj', journal)
 local capabilities = require('user.lsp').make_client_capabilities()
 
 -- tinymist --
-if vim.fn.executable('tinymist') then
+if vim.fn.executable('tinymist') == 1 then
   print('tinymist is executable')
   local root_files = {
     '.git',
