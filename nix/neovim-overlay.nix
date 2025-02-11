@@ -3,42 +3,31 @@
 with final.pkgs.lib; let
   pkgs = final;
 
-  # Use this to create a plugin from a flake input
-  mkNvimPlugin = src: pname:
+  mkNvimPlugin = pname: src: buildInputs:
     pkgs.vimUtils.buildVimPlugin {
-      inherit pname src;
+      inherit pname src buildInputs;
       version = src.lastModifiedDate;
     };
 
-  # Make sure we use the pinned nixpkgs instance for wrapNeovimUnstable,
-  # otherwise it could have an incompatible signature when applying this overlay.
   pkgs-wrapNeovim = inputs.nixpkgs.legacyPackages.${pkgs.system};
-
-  # This is the helper function that builds the Neovim derivation.
   mkNeovim = pkgs.callPackage ./mkNeovim.nix { inherit pkgs-wrapNeovim; };
 
-  # A plugin can either be a package or an attrset, such as
-  # { plugin = <plugin>; # the package, e.g. pkgs.vimPlugins.nvim-cmp
-  #   config = <config>; # String; a config that will be loaded with the plugin
-  #   # Boolean; Whether to automatically load the plugin as a 'start' plugin,
-  #   # or as an 'opt' plugin, that can be loaded with `:packadd!`
-  #   optional = <true|false>; # Default: false
-  #   ...
-  # }
-  all-plugins = with pkgs.vimPlugins; [
+  core-plugins = with pkgs.vimPlugins; [
     # treesitter
     nvim-treesitter.withAllGrammars
     nvim-treesitter-textobjects
     nvim-ts-context-commentstring
-
     # completion
     luasnip
     blink-cmp
-
     # git
     gitsigns-nvim
     vim-fugitive
-
+    (mkNvimPlugin
+      "git-worktree"
+      inputs.git-worktree-nvim
+      [plenary-nvim]
+    )
     # misc
     telescope-nvim
     undotree 
@@ -46,66 +35,37 @@ with final.pkgs.lib; let
     conform-nvim
     vim-tmux-navigator
     direnv-vim
-
-    # UI
     mini-statusline
     gruvbox-nvim
-
-    # libraries
-    plenary-nvim
     vim-startuptime
+  ];
 
-    typst-vim
-
-    # bleeding-edge
-    (pkgs.vimUtils.buildVimPlugin {
-       name = "git-worktree";
-       src = inputs.git-worktree-nvim; 
-       buildInputs = [
-          plenary-nvim 
-       ];
-    })
-    
-    (pkgs.vimUtils.buildVimPlugin {
-       name = "typstar";
-       src = inputs.typstar; 
-       buildInputs = [
-          luasnip 
-          nvim-treesitter-parsers.typst
-       ];
-    })
+  opt-plugins = with pkgs.vimPlugins; [
+    {
+      plugin = typst-vim;
+      optional = true;
+    }
+    {
+      plugin = (mkNvimPlugin
+        "typstar"
+        inputs.typstar
+        [luasnip nvim-treesitter-parsers.typst]
+      );
+      optional = true;
+    }
   ];
 
   extraPackages = [
-    # language servers, etc.
-    # !! now configured per project with nix-direnv !!
     pkgs.ripgrep # for telescope
   ];
 in {
-  # This is the neovim derivation
-  # returned by the overlay
   nvim-pkg = mkNeovim {
-    plugins = all-plugins;
+    plugins = core-plugins ++ opt-plugins;
     inherit extraPackages;
   };
 
   # This can be symlinked in the devShell's shellHook
   nvim-luarc-json = final.mk-luarc-json {
-    plugins = all-plugins;
+    plugins = core-plugins;
   };
-
-  # You can add as many derivations as you like.
-  # Use `ignoreConfigRegexes` to filter out config
-  # files you would not like to include.
-  #
-  # For example:
-  #
-  # nvim-pkg-no-telescope = mkNeovim {
-  #   plugins = [];
-  #   ignoreConfigRegexes = [
-  #     "^plugin/telescope.lua"
-  #     "^ftplugin/.*.lua"
-  #   ];
-  #   inherit extraPackages;
-  # };
 }
