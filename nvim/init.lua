@@ -5,9 +5,6 @@ local g = vim.g
 g.mapleader = ' '
 g.maplocalleader = ';'
 
--- experimental lua loader
-vim.loader.enable()
-
 -- :h options
 opt.number = true
 opt.relativenumber = true
