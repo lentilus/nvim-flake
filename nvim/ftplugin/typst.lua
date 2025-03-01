@@ -89,9 +89,7 @@ if vim.fn.executable('tinymist') == 1 then
 end
 
 -- zeta --
-local zeta_bin = '/home/lentilus/git/zeta.git/dev/bin/zeta'
-
-if vim.fn.executable(zeta_bin) then
+if vim.fn.executable('zeta') then
   local indicator = vim.fs.find({ '.zeta' }, { upward = true })[1] or nil
   if indicator == nil then
     return
@@ -99,7 +97,7 @@ if vim.fn.executable(zeta_bin) then
   local root = vim.fs.dirname(indicator)
   vim.lsp.start {
     name = 'zeta',
-    cmd = { zeta_bin },
+    cmd = { 'zeta' },
     fileypes = { 'typst' },
     root_dir = root,
     capabilities = capabilities,
