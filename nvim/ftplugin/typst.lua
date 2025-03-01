@@ -90,6 +90,7 @@ end
 
 -- zeta --
 if vim.fn.executable('zeta') then
+  print('zeta is executable')
   local indicator = vim.fs.find({ '.zeta' }, { upward = true })[1] or nil
   if indicator == nil then
     return
