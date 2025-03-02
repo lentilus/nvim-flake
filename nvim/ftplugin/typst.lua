@@ -96,6 +96,7 @@ if vim.fn.executable('zeta') then
     return
   end
   local root = vim.fs.dirname(indicator)
+  print('Starting zeta at root: ' .. root)
   vim.lsp.start {
     name = 'zeta',
     cmd = { 'zeta' },
