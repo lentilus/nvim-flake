@@ -17,6 +17,7 @@ with final.pkgs.lib; let
     nvim-treesitter.withAllGrammars
     nvim-treesitter-textobjects
     nvim-ts-context-commentstring
+    playground
     # completion
     luasnip
     blink-cmp
