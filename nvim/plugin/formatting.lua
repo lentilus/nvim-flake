@@ -59,7 +59,7 @@ local opts = {
   formatters_by_ft = {
     lua = { 'stylua' },
     python = { 'black' },
-    go = { 'gofumt', 'goimports', 'golines' },
+    go = { 'gofumpt', 'goimports', 'golines' },
     typst = { 'typstfmt' },
   },
 
