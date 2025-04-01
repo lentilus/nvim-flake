@@ -59,7 +59,9 @@ local opts = {
   formatters_by_ft = {
     lua = { 'stylua' },
     python = { 'black' },
-    go = { 'gofumpt', 'goimports', 'golines' },
+    -- goimports does not play well with format_diff
+    -- go = { 'gofumpt', 'goimports', 'golines' },
+    go = { 'gofumpt', 'golines' },
     typst = { 'typstfmt' },
   },
 
