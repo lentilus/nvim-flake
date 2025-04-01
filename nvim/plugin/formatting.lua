@@ -36,7 +36,7 @@ local function format_range(hunks)
 end
 
 -- https://github.com/stevearc/conform.nvim/issues/92
-function format_diff(bufnr)
+local function format_diff(_)
   local ignore_filetypes = { 'lua' }
   if vim.tbl_contains(ignore_filetypes, vim.bo.filetype) then
     conform.format(defaults)
@@ -47,6 +47,7 @@ function format_diff(bufnr)
   local hunks = require('gitsigns').get_hunks()
   if hunks == nil then
     conform.format(defaults)
+    vim.notify('formatted whole buffer.')
     return
   end
 
