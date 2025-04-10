@@ -37,7 +37,7 @@ end
 
 -- https://github.com/stevearc/conform.nvim/issues/92
 local function format_diff(_)
-  local ignore_filetypes = { 'lua' }
+  local ignore_filetypes = { 'lua', 'go' }
   if vim.tbl_contains(ignore_filetypes, vim.bo.filetype) then
     conform.format(defaults)
     vim.notify('formatted whole buffer.')
