@@ -54,6 +54,14 @@ with final.pkgs.lib; let
       );
       optional = true;
     }
+    {
+    plugin = (mkNvimPlugin
+      "jupynium"
+      inputs.jupynium
+      []
+      );
+      optional = true;
+    }
   ];
 
   extraPackages = [

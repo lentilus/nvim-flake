@@ -226,6 +226,22 @@
         "type": "github"
       }
     },
+    "jupynium": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1744781356,
+        "narHash": "sha256-ppmoREFLDULuxStVYluraqDctHTKppFlhc/NeJ1wWo8=",
+        "owner": "kiyoon",
+        "repo": "jupynium.nvim",
+        "rev": "144ab6e46d2b42264c16a4f3c780d88feb0a89e8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kiyoon",
+        "repo": "jupynium.nvim",
+        "type": "github"
+      }
+    },
     "luvit-meta": {
       "flake": false,
       "locked": {
@@ -365,6 +381,7 @@
         "flake-utils": "flake-utils",
         "gen-luarc": "gen-luarc_2",
         "git-worktree-nvim": "git-worktree-nvim",
+        "jupynium": "jupynium",
         "nixpkgs": "nixpkgs_4",
         "typstar": "typstar"
       }
