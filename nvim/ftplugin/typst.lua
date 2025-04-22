@@ -1,12 +1,18 @@
 -- load optional plugins
 if not vim.g.did_load_typstar_plugin then
+  vim.g.did_load_typstar_plugin = true
+
+  if vim.fn.executable('typst') ~= 1 then
+    return
+  end
   vim.g.typst_pdf_viewer = 'previewpdf --root .'
 
   vim.cmd.packadd('typst-vim')
   vim.cmd.packadd('typstar')
 
-  vim.g.did_load_typstar_plugin = true
   require('typstar').setup {}
+
+  vim.keymap.set('ni', '<C-;>', vim.cmd.TypstarToggleSnippets, { buffer = true })
 end
 
 vim.api.nvim_set_hl(0, 'FirstTwoLines', { fg = 'Gray' })
@@ -41,31 +47,11 @@ end
 
 vim.keymap.set('n', '<leader>jj', journal)
 
--- auto-preview
--- vim.api.nvim_create_autocmd('BufWinEnter', {
---   pattern = '*.typ',
---   callback = function(args)
---     local bufnr = args.buf
---
---     -- if already being watched just switch pdf
---     if vim.b[bufnr].typstwatch then
---       local path = vim.api.nvim_buf_get_name(bufnr)
---       local pdf = vim.fn.fnamemodify(path, ':r') .. '.pdf'
---       vim.fn.jobstart('previewpdf ' .. pdf, { detach = true })
---       return
---     end
---
---     vim.cmd([[TypstWatch]])
---     vim.b[bufnr].typstwatch = true
---   end,
--- })
-
 --- LSP SETUP ---
 local capabilities = require('user.lsp').make_client_capabilities()
 
 -- tinymist --
 if vim.fn.executable('tinymist') == 1 then
-  print('tinymist is executable')
   local root_files = {
     '.git',
     '.zeta',
@@ -89,14 +75,12 @@ if vim.fn.executable('tinymist') == 1 then
 end
 
 -- zeta --
-if vim.fn.executable('zeta') then
-  print('zeta is executable')
+if vim.fn.executable('zeta') == 1 then
   local indicator = vim.fs.find({ '.zeta' }, { upward = true })[1] or nil
   if indicator == nil then
     return
   end
   local root = vim.fs.dirname(indicator)
-  print('Starting zeta at root: ' .. root)
   vim.lsp.start {
     name = 'zeta',
     cmd = { 'zeta' },
