@@ -12,7 +12,7 @@ if not vim.g.did_load_typstar_plugin then
 
   require('typstar').setup {}
 
-  vim.keymap.set({ 'i', 'n' }, '<C-;>', vim.cmd.TypstarToggleSnippets, { buffer = true })
+  vim.keymap.set({ 'i', 'n' }, '<M-;>', vim.cmd.TypstarToggleSnippets, { buffer = true })
 end
 
 vim.api.nvim_set_hl(0, 'FirstTwoLines', { fg = 'Gray' })
