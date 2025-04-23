@@ -7,7 +7,8 @@ if not vim.g.did_load_typstar_plugin then
   end
   vim.g.typst_pdf_viewer = 'previewpdf --root .'
 
-  vim.cmd.packadd('typst-vim')
+  -- we load it at startup
+  -- vim.cmd.packadd('typst-vim')
   vim.cmd.packadd('typstar')
 
   require('typstar').setup {}

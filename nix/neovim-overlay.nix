@@ -44,7 +44,7 @@ with final.pkgs.lib; let
   opt-plugins = with pkgs.vimPlugins; [
     {
       plugin = typst-vim;
-      optional = true;
+      optional = false;
     }
     {
       plugin = (mkNvimPlugin
