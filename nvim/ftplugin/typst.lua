@@ -5,20 +5,16 @@ if not vim.g.did_load_typstar_plugin then
   if vim.fn.executable('typst') ~= 1 then
     return
   end
-  vim.g.typst_pdf_viewer = 'previewpdf --root .'
 
-  -- we load it at startup
-  -- vim.cmd.packadd('typst-vim')
+  -- configure typst-vim
+  vim.g.typst_pdf_viewer = 'previewpdf'
+
+  -- load and configure typstar
   vim.cmd.packadd('typstar')
-
   require('typstar').setup {}
 
   vim.keymap.set({ 'i', 'n' }, '<M-;>', vim.cmd.TypstarToggleSnippets, { buffer = true })
 end
-
-vim.api.nvim_set_hl(0, 'FirstTwoLines', { fg = 'Gray' })
-vim.api.nvim_buf_add_highlight(0, -1, 'FirstTwoLines', 0, 0, -1)
-vim.api.nvim_buf_add_highlight(0, -1, 'FirstTwoLines', 1, 0, -1)
 
 vim.keymap.set('n', '<leader>ll', vim.cmd.TypstWatch, { buffer = true })
 
@@ -68,7 +64,6 @@ if vim.fn.executable('tinymist') == 1 then
     settings = {
       tinymist = {
         outputPath = '$root/$dir/$name', -- Example: store artifacts in a target directory
-        -- rootPath = '-', -- Use parent directory of the file as root
       },
     },
   }
