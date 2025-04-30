@@ -21,7 +21,7 @@
     };
 
     typstar = {
-      url = "github:arne314/typstar";
+      url = "github:arne314/typstar/dev";
       flake = false;
     };
 
