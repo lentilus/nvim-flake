@@ -191,11 +191,11 @@
     "git-worktree-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1730253471,
-        "narHash": "sha256-Uvcihnc/+v4svCrAO2ds0XvNmqO801ILWu8sbh/znf4=",
+        "lastModified": 1739627460,
+        "narHash": "sha256-fnqJqQTNei+8Gk4vZ2hjRj8iHBXTZT15xp9FvhGB+BQ=",
         "owner": "polarmutex",
         "repo": "git-worktree.nvim",
-        "rev": "bac72c240b6bf1662296c31546c6dad89b4b7a3c",
+        "rev": "3ad8c17a3d178ac19be925284389c14114638ebb",
         "type": "github"
       },
       "original": {

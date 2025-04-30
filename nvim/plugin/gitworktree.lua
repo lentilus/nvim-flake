@@ -4,6 +4,7 @@ end
 
 vim.g.did_load_worktree_plugin = true
 
+-- vim.cmd.packadd('git-worktree')
 local Hooks = require('git-worktree.hooks')
 local config = require('git-worktree.config')
 local update_on_switch = Hooks.builtins.update_current_buffer_on_switch
