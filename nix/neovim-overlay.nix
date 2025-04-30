@@ -24,11 +24,7 @@ with final.pkgs.lib; let
     # git
     gitsigns-nvim
     vim-fugitive
-    # (mkNvimPlugin
-    #   "git-worktree"
-    #   inputs.git-worktree-nvim
-    #   [plenary-nvim]
-    # )
+    git-worktree-nvim
     # misc
     telescope-nvim
     undotree 
