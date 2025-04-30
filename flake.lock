@@ -404,11 +404,11 @@
     "typstar": {
       "flake": false,
       "locked": {
-        "lastModified": 1736699679,
-        "narHash": "sha256-hHoKL7ywDmzCee+kOBWXXl/Vmd6/xQy2eC5LvcVyTeE=",
+        "lastModified": 1742634146,
+        "narHash": "sha256-785SRVRbpYCVmI3CXw9+vjSJF6a/VyDROYnCZPH12Vg=",
         "owner": "arne314",
         "repo": "typstar",
-        "rev": "bfc2fd103dc0f0f7a82e1fb5a57ec8d7b055bcbf",
+        "rev": "ec5caf32a84f1508e1b2660848329bf3d3f2dff6",
         "type": "github"
       },
       "original": {
