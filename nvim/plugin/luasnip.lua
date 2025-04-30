@@ -33,9 +33,9 @@ local function smart_jump(length, x, y, tries)
   end
 end
 
-vim.keymap.set({ 'i', 's' }, '<M-j>', function()
+vim.keymap.set({ 'i', 's' }, '<C-f>', function()
   smart_jump(1)
 end)
-vim.keymap.set({ 'i', 's' }, '<M-k>', function()
+vim.keymap.set({ 'i', 's' }, '<C-d>', function()
   smart_jump(-1)
 end)
