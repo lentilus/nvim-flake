@@ -12,10 +12,9 @@ if not vim.g.did_load_typstar_plugin then
   -- load and configure typstar
   vim.cmd.packadd('typstar')
   require('typstar').setup {}
-
-  vim.keymap.set({ 'i', 'n' }, '<M-;>', vim.cmd.TypstarToggleSnippets, { buffer = true })
 end
 
+vim.keymap.set({ 'i', 'n' }, '<M-;>', vim.cmd.TypstarToggleSnippets, { buffer = true })
 vim.keymap.set('n', '<leader>ll', vim.cmd.TypstWatch, { buffer = true })
 
 -- journal
