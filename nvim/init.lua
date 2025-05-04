@@ -35,16 +35,12 @@ opt.colorcolumn = '80'
 -- diagnostic messages
 vim.diagnostic.config {
   update_in_insert = true,
-  float = {
-    focusable = false,
-    style = 'minimal',
-    border = 'rounded',
-    source = true,
-    header = '',
-    prefix = '',
+  virtual_text = {
+    source = 'if_many',
+    spacing = 4,
   },
 }
 
 -- make sure color scheme is set before other plugins load
-require('gruvbox').setup { contrast = 'hard' }
+require('gruvbox').setup { contrast = 'hard', dim_inactive = false, transparent_mode = false }
 cmd.colorscheme('gruvbox')
