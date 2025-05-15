@@ -41,6 +41,14 @@ vim.diagnostic.config {
   },
 }
 
+-- extra file types
+vim.filetype.add {
+  extension = {
+    -- kodama
+    typst = 'typst',
+  },
+}
+
 -- make sure color scheme is set before other plugins load
 require('gruvbox').setup { contrast = 'hard', dim_inactive = false, transparent_mode = false }
 cmd.colorscheme('gruvbox')
