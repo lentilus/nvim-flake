@@ -1,4 +1,3 @@
-local cmd = vim.cmd
 local opt = vim.o
 local g = vim.g
 
@@ -20,19 +19,11 @@ opt.expandtab = true
 opt.scrolloff = 8
 opt.termguicolors = true
 opt.undofile = true
-
--- indentation
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.shiftwidth = 4
-
--- search down into subfolders
 opt.path = vim.o.path .. '**'
-
--- 80 line hint
 opt.colorcolumn = '80'
-
--- NOTE: can execute arbitrary code
 opt.exrc = true
 
 -- diagnostic messages
@@ -46,4 +37,4 @@ vim.diagnostic.config {
 
 -- make sure color scheme is set before other plugins load
 require('gruvbox').setup { contrast = 'hard', dim_inactive = false, transparent_mode = false }
-cmd.colorscheme('gruvbox')
+vim.cmd.colorscheme('gruvbox')
