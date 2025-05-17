@@ -32,20 +32,15 @@ opt.path = vim.o.path .. '**'
 -- 80 line hint
 opt.colorcolumn = '80'
 
+-- NOTE: can execute arbitrary code
+opt.exrc = true
+
 -- diagnostic messages
 vim.diagnostic.config {
   update_in_insert = true,
   virtual_text = {
     source = 'if_many',
     spacing = 4,
-  },
-}
-
--- extra file types
-vim.filetype.add {
-  extension = {
-    -- kodama
-    typst = 'typst',
   },
 }
 
