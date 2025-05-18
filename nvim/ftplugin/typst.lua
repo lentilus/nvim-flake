@@ -59,5 +59,8 @@ if vim.fn.executable('tinymist') == 1 then
         outputPath = '$root/$dir/$name', -- Example: store artifacts in a target directory
       },
     },
+    on_attach = function(client, _)
+      client.server_capabilities.workspaceSymbolProvider = false
+    end,
   }
 end
