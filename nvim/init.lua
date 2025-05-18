@@ -38,3 +38,6 @@ vim.diagnostic.config {
 -- make sure color scheme is set before other plugins load
 require('gruvbox').setup { contrast = 'hard', dim_inactive = false, transparent_mode = false }
 vim.cmd.colorscheme('gruvbox')
+
+-- unbreaks exrc functionality
+vim.cmd('doautocmd DirChanged *')
