@@ -26,6 +26,10 @@ opt.path = vim.o.path .. '**'
 opt.colorcolumn = '80'
 opt.exrc = true
 
+-- colorscheme
+opt.background = 'light'
+vim.cmd.colorscheme('gruvbox')
+
 -- diagnostic messages
 vim.diagnostic.config {
   update_in_insert = true,
@@ -34,10 +38,6 @@ vim.diagnostic.config {
     spacing = 4,
   },
 }
-
--- make sure color scheme is set before other plugins load
-require('gruvbox').setup { contrast = 'hard', dim_inactive = false, transparent_mode = false }
-vim.cmd.colorscheme('gruvbox')
 
 -- unbreaks exrc functionality
 vim.cmd('doautocmd DirChanged *')
