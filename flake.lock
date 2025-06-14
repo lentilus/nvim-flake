@@ -404,16 +404,15 @@
     "typstar": {
       "flake": false,
       "locked": {
-        "lastModified": 1747671204,
-        "narHash": "sha256-uYB56CtA7hnepqjiUBhhdLctnWIO8NIYaO3qUpK3auA=",
-        "owner": "arne314",
+        "lastModified": 1749934110,
+        "narHash": "sha256-E7cNiPqwUw7/DlDFn9vCxeIOwTIcoaJ5bFDxz9JpWfE=",
+        "owner": "lentilus",
         "repo": "typstar",
-        "rev": "849cd69f476a860fc574fe5dc467495448e57744",
+        "rev": "92ce28fb1bd32e9c267cb75c0c68ea3a5b884935",
         "type": "github"
       },
       "original": {
-        "owner": "arne314",
-        "ref": "dev",
+        "owner": "lentilus",
         "repo": "typstar",
         "type": "github"
       }

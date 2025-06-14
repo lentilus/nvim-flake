@@ -21,7 +21,7 @@
     };
 
     typstar = {
-      url = "github:arne314/typstar/dev";
+      url = "github:lentilus/typstar";
       flake = false;
     };
 
