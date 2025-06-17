@@ -32,6 +32,10 @@ local opts = {
       symbol_width = 90,
       entry_maker = entry_maker,
     },
+    lsp_dynamic_workspace_symbols = {
+      symbol_width = 90,
+      entry_maker = entry_maker,
+    },
   },
 }
 
@@ -43,7 +47,7 @@ vim.keymap.set('n', '<leader>fv', builtin.git_files)
 vim.keymap.set('n', '<leader>fg', builtin.live_grep)
 vim.keymap.set('n', '<leader>fb', builtin.buffers)
 vim.keymap.set('n', '<leader>fh', builtin.help_tags)
-vim.keymap.set('n', '<leader>fs', builtin.lsp_workspace_symbols)
+vim.keymap.set('n', '<leader>fs', builtin.lsp_dynamic_workspace_symbols)
 vim.keymap.set('n', '<leader>fw', function()
   vim.cmd.Telescope('git_worktree')
 end)
