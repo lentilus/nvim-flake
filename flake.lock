@@ -226,22 +226,6 @@
         "type": "github"
       }
     },
-    "jupynium": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1744781356,
-        "narHash": "sha256-ppmoREFLDULuxStVYluraqDctHTKppFlhc/NeJ1wWo8=",
-        "owner": "kiyoon",
-        "repo": "jupynium.nvim",
-        "rev": "144ab6e46d2b42264c16a4f3c780d88feb0a89e8",
-        "type": "github"
-      },
-      "original": {
-        "owner": "kiyoon",
-        "repo": "jupynium.nvim",
-        "type": "github"
-      }
-    },
     "luvit-meta": {
       "flake": false,
       "locked": {
@@ -360,16 +344,16 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1749857119,
-        "narHash": "sha256-tG5xUn3hFaPpAHYIvr2F88b+ovcIO5k1HqajFy7ZFPM=",
+        "lastModified": 1755186698,
+        "narHash": "sha256-wNO3+Ks2jZJ4nTHMuks+cxAiVBGNuEBXsT29Bz6HASo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "5f4f306bea96741f1588ea4f450b2a2e29f42b98",
+        "rev": "fbcf476f790d8a217c3eab4e12033dc4a0f6d23c",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-25.05",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -381,7 +365,6 @@
         "flake-utils": "flake-utils",
         "gen-luarc": "gen-luarc_2",
         "git-worktree-nvim": "git-worktree-nvim",
-        "jupynium": "jupynium",
         "nixpkgs": "nixpkgs_4",
         "typstar": "typstar"
       }
@@ -404,15 +387,15 @@
     "typstar": {
       "flake": false,
       "locked": {
-        "lastModified": 1749655363,
-        "narHash": "sha256-DMu0YLImT6xnsqJtHkMXQYNL7OVYQmAUB5IlJL9zSAE=",
-        "owner": "arne314",
+        "lastModified": 1749934110,
+        "narHash": "sha256-E7cNiPqwUw7/DlDFn9vCxeIOwTIcoaJ5bFDxz9JpWfE=",
+        "owner": "lentilus",
         "repo": "typstar",
-        "rev": "5094c1c05c34c453db1a7c0150eecf22bc4833f7",
+        "rev": "92ce28fb1bd32e9c267cb75c0c68ea3a5b884935",
         "type": "github"
       },
       "original": {
-        "owner": "arne314",
+        "owner": "lentilus",
         "repo": "typstar",
         "type": "github"
       }

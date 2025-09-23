@@ -40,4 +40,4 @@ vim.diagnostic.config {
 }
 
 -- unbreaks exrc functionality
-vim.cmd('doautocmd DirChanged *')
+-- vim.cmd('doautocmd DirChanged *')
