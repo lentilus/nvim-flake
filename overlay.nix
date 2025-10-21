@@ -44,7 +44,9 @@ with final.pkgs.lib; let
     mini-statusline
     gruvbox-nvim
     vim-startuptime
+    # languages
     typst-vim
+    lean-nvim
   ];
 
   externalPackages = with pkgs; [
