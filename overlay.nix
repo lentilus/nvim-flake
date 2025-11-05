@@ -47,10 +47,12 @@ with final.pkgs.lib; let
     # languages
     typst-vim
     lean-nvim
+    pkgs.vimPlugins.cornelis
   ];
 
   externalPackages = with pkgs; [
     ripgrep
+    cornelis
   ];
 
   defaultPlugin = {
